@@ -1,11 +1,12 @@
 from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.worksheet.table import Table, TableStyleInfo
 from openpyxl.styles import NamedStyle, Alignment, Font, PatternFill, Border, Side
-from chart_creation.chart_creation_counts import create_column_chart_for_counts
-
+from chart_creation.chart_creation_counts import create_column_chart
 def add_dataframe_to_excel_sheet(workbook, sheetname, df):
     # create a new worksheet in the workbook
     sheet = workbook.create_sheet(sheetname)
+    sheet.column_dimensions['A'].width = 30
+    sheet.column_dimensions['B'].width = 20
 
     # add heading above the table
     # sheet.insert_rows(1)
@@ -65,6 +66,5 @@ def add_dataframe_to_excel_sheet(workbook, sheetname, df):
 
     table.tableStyleInfo = style
     sheet.add_table(table)
-    create_column_chart_for_counts(sheetname, "WCAG Rule Wise Defect Distribution Chart", "WCAG_Counts", workbook)
-    
+    create_column_chart(workbook, sheetname, "WCAG_Counts")
 
