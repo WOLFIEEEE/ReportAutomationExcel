@@ -1,0 +1,51 @@
+WCAG,WCAG_SC,Result,No_of_occurence
+1.1.1,1.1.1 Non Text Content,Review,0
+1.2.1,1.2.1 Audio-only and Video-only (Prerecorded),Review,0
+1.2.2,1.2.2 Captions,Review,0
+1.2.3,1.2.3 Audio Descriptions and Media Alternative (Prerecorded),Review,0
+1.2.4,1.2.4 Captions (Live),Review,0
+1.2.5,1.2.5 Audio Description (Prerecorded),Review,0
+1.3.1,1.3.1 Info and Relationship,Review,0
+1.3.2,1.3.2 Meaningful Sequence,Review,0
+1.3.3,1.3.3 Sensory Characteristics,Review,0
+1.3.4,1.3.4 Orientation,Review,0
+1.3.5,1.3.5 Identify Input Purpose,Review,0
+1.4.1,1.4.1 Use of Color,Review,0
+1.4.2,1.4.2 Audio Control,Review,0
+1.4.3,1.4.3 Contrast (Minimum),Review,0
+1.4.4,1.4.4 Resize Text,Review,0
+1.4.5,1.4.5 Image of Text,Review,0
+1.4.10,1.4.10 Reflow,Review,0
+1.4.11,1.4.11 Non Text Contrast,Review,0
+1.4.12,1.4.12 Text Spacing,Review,0
+1.4.13,1.4.13 Content on Hover or Focus,Review,0
+2.1.1,2.1.1 Keyboard,Review,0
+2.1.2,2.1.2 No Keyboard Trap,Review,0
+2.1.4,2.1.4 Character Key Shortcut,Review,0
+2.2.1,2.2.1 Timing Adjustable,Review,0
+2.2.2,"2.2.2 Pause, Stop, Hide",Review,0
+2.3.1,2.3.1 Three Flashes or Below Threshold,Review,0
+2.4.1,2.4.1 Bypass Block,Review,0
+2.4.2,2.4.2 Page Titled,Review,0
+2.4.3,2.4.3 Focus Order,Review,0
+2.4.4,2.4.4 Link Purpose (In Context),Review,0
+2.4.5,2.4.5 Multiple Ways,Review,0
+2.4.6,2.4.6 Headings and Labels,Review,0
+2.4.7,2.4.7 Focus Visible,Review,0
+2.5.1,2.5.1 Pointer Gestures,Review,0
+2.5.2,2.5.2 Pointer Cancellation,Review,0
+2.5.3,2.5.3 Label in Name,Review,0
+2.5.4,2.5.4 Motion Actuation,Review,0
+3.1.1,3.1.1 Language of Page,Review,0
+3.1.2,3.1.2 Language of Parts,Review,0
+3.2.1,3.2.1 On Focus,Review,0
+3.2.2,3.2.2 On Input,Review,0
+3.2.3,3.2.3 Consistent Navigation,Review,0
+3.2.4,3.2.4 Consistent Identification,Review,0
+3.3.1,3.3.1 Error Identification,Review,0
+3.3.2,3.3.2 Label or Instructions,Review,0
+3.3.3,3.3.3 Error Suggestion,Review,0
+3.3.4,"3.3.4 Error Prevention (Legal, Financial, Data)",Review,0
+4.1.1,4.1.1 Parsing,Review,0
+4.1.2,"4.1.2 Name, Role, Value",Review,0
+4.1.3,4.1.3 Status Message,Review,0
