@@ -1,6 +1,6 @@
 from openpyxl.chart import BarChart, Reference
 from openpyxl.utils.cell import range_boundaries
-from openpyxl.chart import Series
+from openpyxl.chart.label import DataLabelList
 
 def create_column_chart(workbook, sheetname, tablename):
     # Select the sheet by name
@@ -29,6 +29,14 @@ def create_column_chart(workbook, sheetname, tablename):
     chart.y_axis.title = "Defect Count"
     chart.width = length
     chart.height = height
+    chart.dataLabels = DataLabelList()
+    chart.dataLabels.showVal = True
+    chart.dataLabels.showCatName = False
+    chart.dataLabels.showSerName = False
+    chart.dataLabels.showLegendKey = False
+    # chart.dataLabels.number_format = "0"
+    # chart.dataLabels.position = "t"
+
     
     data = Reference(ws, min_col=col_index, min_row=table_start_col, max_row=table_end_col)
     chart.add_data(data , titles_from_data=True)
@@ -36,6 +44,12 @@ def create_column_chart(workbook, sheetname, tablename):
     # Define the category axis for the chart
     categories = Reference(ws, min_col=col_index-1, min_row=table_start_col+1, max_row=table_end_col)
     chart.set_categories(categories )
+
+    for series in chart.series:
+        if series.dLbls is not None:
+            for dLbl in series.dLbls:
+                dLbl.tx.rich.p[0].numFmtId = -1
+
 
     # Add the chart to the worksheet
     ws.add_chart(chart, "E10")

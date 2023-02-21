@@ -67,4 +67,5 @@ def add_dataframe_to_excel_sheet(workbook, sheetname, df):
     table.tableStyleInfo = style
     sheet.add_table(table)
     create_column_chart(workbook, sheetname, "WCAG_Counts")
+    return len(df)+2
 
