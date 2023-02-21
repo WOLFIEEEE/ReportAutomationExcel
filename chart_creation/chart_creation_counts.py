@@ -13,7 +13,7 @@ def create_column_chart(workbook, sheetname, tablename):
     table_range = table.ref
 
     # Get the column of data to plot in the chart (assuming it's the second column)
-    col_index = 2
+    col_index = 3
 
     # Define the chart object and set its properties
     
@@ -21,8 +21,8 @@ def create_column_chart(workbook, sheetname, tablename):
     # Define the data series for the chart
     table_start_row, table_start_col, table_end_row, table_end_col = range_boundaries(table_range)
     print(table_start_row, table_start_col, table_end_row, table_end_col)
-    length = table_end_col - table_start_col;
-    height = 10;
+    length = table_end_col - table_start_col-2;
+    height = 9;
     chart = BarChart()
     chart.title = "WCAG 2.1 AA Success Criteria Distribution"
     chart.x_axis.title = "WCAG Success Criteria #"
@@ -50,8 +50,9 @@ def create_column_chart(workbook, sheetname, tablename):
             for dLbl in series.dLbls:
                 dLbl.tx.rich.p[0].numFmtId = -1
 
-
+    nn = int(((table_end_col - table_start_col)/4) + 3);
     # Add the chart to the worksheet
-    ws.add_chart(chart, "E10")
+    pos = f"F{nn}"
+    ws.add_chart(chart, pos)
 
     # Save the workbook

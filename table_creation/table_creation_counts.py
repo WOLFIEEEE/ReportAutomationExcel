@@ -5,12 +5,12 @@ from chart_creation.chart_creation_counts import create_column_chart
 def add_dataframe_to_excel_sheet(workbook, sheetname, df):
     # create a new worksheet in the workbook
     sheet = workbook.create_sheet(sheetname)
-    sheet.column_dimensions['A'].width = 30
-    sheet.column_dimensions['B'].width = 20
+    
 
     # add heading above the table
     # sheet.insert_rows(1)
-    sheet.cell(row=1, column=1, value="WCAG Rule Wise Defect Distribution Chart")
+    text_cell = sheet.cell(row=1, column=1, value="WCAG Rule Wise Defect Distribution Chart")
+    text_cell.font = Font(size=13, color="2F5496")
 
     # add data from the dataframe to the sheet
     for r in dataframe_to_rows(df, index=False, header=True):
@@ -66,6 +66,14 @@ def add_dataframe_to_excel_sheet(workbook, sheetname, df):
 
     table.tableStyleInfo = style
     sheet.add_table(table)
+    
+    sheet.insert_cols(1)
+    sheet.insert_rows(1)
+    sheet.insert_rows(3)
+    sheet.column_dimensions['B'].width = 30
+    sheet.column_dimensions['C'].width = 20
+    table_range = f"B4:C{len(df)+4}"
+    table.ref = table_range
     create_column_chart(workbook, sheetname, "WCAG_Counts")
-    return len(df)+2
+    return len(df)+5
 
