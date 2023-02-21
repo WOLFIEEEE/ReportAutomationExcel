@@ -1,6 +1,8 @@
 from openpyxl.chart import BarChart, Reference
 from openpyxl.utils.cell import range_boundaries
+from openpyxl.chart.title import Title
 from openpyxl.chart.label import DataLabelList
+from openpyxl.styles import Font
 
 def create_column_chart(workbook, sheetname, tablename):
     # Select the sheet by name
@@ -24,7 +26,9 @@ def create_column_chart(workbook, sheetname, tablename):
     length = table_end_col - table_start_col-2;
     height = 9;
     chart = BarChart()
-    chart.title = "WCAG 2.1 AA Success Criteria Distribution"
+    chart.title ="WCAG 2.1 AA Success Criteria Distribution"
+# Set the font of the chart title to the Font object we created
+
     chart.x_axis.title = "WCAG Success Criteria #"
     chart.y_axis.title = "Defect Count"
     chart.width = length
