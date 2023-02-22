@@ -37,4 +37,4 @@ def create_counts_df(workbook):
     # Filter the dataframe to only include WCAG SCs that appear in the workbook
     new_df = df[['WCAG_SC', 'No_of_occurence']][df['No_of_occurence'] > 0].reset_index(drop=True)
 
-    return new_df
+    return df , new_df
